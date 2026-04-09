@@ -1,6 +1,6 @@
 class AppNotas {
     constructor() {
-        this.notas = JSON.parse(localStorage.getItem('notas')) || [];
+        this.notas = []; // Array vazio - SEM localStorage
         this.form = document.getElementById('InfoNotas');
         this.notasContainer = document.getElementById('Notas');
         this.contador = document.getElementById('contador');
@@ -33,7 +33,6 @@ class AppNotas {
         };
 
         this.notas.unshift(novaNota); // Adiciona no início
-        this.salvarNoLocalStorage();
         this.renderNotas();
         this.limparForm();
         this.atualizarContador();
@@ -63,7 +62,6 @@ class AppNotas {
     deletarNota(id) {
         if (confirm('Tem certeza que deseja excluir esta nota?')) {
             this.notas = this.notas.filter(nota => nota.id !== id);
-            this.salvarNoLocalStorage();
             this.renderNotas();
             this.atualizarContador();
         }
@@ -74,13 +72,10 @@ class AppNotas {
         document.getElementById('info').value = '';
     }
 
-    salvarNoLocalStorage() {
-        localStorage.setItem('notas', JSON.stringify(this.notas));
-    }
-
     atualizarContador() {
         this.contador.textContent = `(${this.notas.length})`;
     }
 }
+
 
 const app = new AppNotas();

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SocialCard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="Container">
+        <div class="form-section">
+            <h2>Novo Card</h2>
+            <form id="form-section">
+                <div class="input-group">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" placeholder="Digite seu nome">
+                </div>
+                <div class="input-group">
+                    <label for="user">User</label>
+                    <input type="text" id="user" placeholder="Digite seu user">
+                </div>
+                <div class="input-group">
+                    <label for="bio">Biografia</label>
+                    <textarea id="bio" placeholder="Escreva sua biografia aqui..." rows="3"></textarea>
+                </div>
+                <div class="input-group">
+                    <label for="tema">Tema</label>
+                    <select id="tema">
+                        <option value="default">Padrão</option>
+                        <option value="dark">Dark</option>
+                        <option value="ceu">Azul</option>
+                        <option value="neon">Neon</option>
+                    </select>
+                </div>
+                <button type="submit" id="EnviarCards">Enviar Card</button>
+            </form>
+        </div>
+
+        <div class="cards-section">
+            <h2>Cards<span id="contador">(0)</span></h2>
+            <div id="Cards" class="cards-container"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

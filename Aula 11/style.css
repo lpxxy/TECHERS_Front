@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+} 
+ 
+ 
+ 
+ /* utilizar o ponto em seguida o nome da classe para formatar a classe
+  se eu quero mudar algo dentro dele, como o paragrafo, colocar o p ou o nome da tag */
+.container p {
+    color: blueviolet;
+    font-weight: bolder;
+}
+
+/* muda apenas os filhos imediatos o >, os netos serao ignorados */
+.container > p {
+    border-bottom: 2px solid black;
+}
+
+/* mira no p que vem logo apos o fechamento da div */
+.container + p {
+    color: gray;
+    font-style: italic;
+}
+
+.destaque {
+    background-color: bisque;
+    width: 200px;
+    padding: 20px; /* distancia interna */
+    border: 5px solid purple; /*  moldura */
+    margin: 15px; /*   distancia de outros elementos */
+}
+
+.container {
+    width: 300px;
+    padding: 50px;
+    border: 10px solid black;
+
+}
+

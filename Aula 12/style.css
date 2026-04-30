@@ -1,0 +1,21 @@
+.item {
+    background-color: rgb(159, 103, 211);
+    color: whitesmoke;
+    font-weight: bold; 
+    padding: 20px;
+    /* margin-bottom: 10px; */
+    border-radius: 5px;
+    text-align: center;
+    display: inline;
+
+}
+
+.menu-pai {
+    display: flex;
+    /* flex-direction: row;
+    gap: 15px; */
+    align-items: center;
+    justify-content: space-between;
+    height: 150px;
+    background-color: purple;
+}

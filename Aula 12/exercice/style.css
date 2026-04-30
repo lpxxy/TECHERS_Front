@@ -1,0 +1,22 @@
+.links {
+    color: whitesmoke;
+    padding: 20px;
+    text-align: center;
+    display: inline;
+    gap: 20px;
+}
+
+.navbar {
+    display: flex;
+    /* flex-direction: row;
+    gap: 15px; */
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    background-color: rgb(43, 24, 24);
+    gap: 20px;
+}
+
+.logo {
+    color: white;
+}

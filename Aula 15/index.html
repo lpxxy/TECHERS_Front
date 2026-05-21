@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 13</title>
+    <script src="PopupInfo.js"></script>
+    
+</head>
+<body>
+    <div>
+       <popup-info>
+            <span slot="meu-texto">Injeção dinamica via slot</span>
+       </popup-info> 
+    </div>
+
+    <template id="popup-template">
+        <style>
+            .wrapper{
+                    position: relative;
+                    display: inline-block;
+                    font-family: sans-serif;
+                    }
+
+            .info{
+                visibility: hidden;
+                width: 200px;
+                background: #2c3e50;
+                color: white;
+                text-align: center;
+                padding: 10px;
+                border-radius: 6px;
+                position: absolute;
+                z-index: 1; 
+                bottom: 125%;
+                left: 50%;
+                margin-left: -100px;
+                opacity: 0;
+                transition: opacity 0.3s;
+                }
+
+            .icon:hover + .info{
+                visibility: visible;
+                opacity: 1;
+            }
+
+            img{
+                width: 30px;
+                cursor: pointer;
+            }
+        </style>
+
+        <span class="wrapper">
+            <span class="icon" tabindex="0">
+                <img src="default.png" alt="Icone de Informação">
+            </span>
+            <span class="info">
+                <slot name="meu-texto">Texto padrao de fallback</slot>
+            </span>
+        </span>
+    </template>
+    
+</body>
+</html>

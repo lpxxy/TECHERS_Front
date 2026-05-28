@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPG</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <h1 id="Titulo">Mochila do Aventureiro</h1>
+
+    <form id="inventario">
+        <div class="campo">
+            <label for="NomeItem">Nome do Item</label>
+            <input type="text" id="NomeItem" placeholder="Ex: Espada Longa">
+        </div>
+
+        <div class="campo">
+            <label for="DescricaoItem">Descrição / Efeitos</label>
+           
+            <textarea id="DescricaoItem" placeholder="Ex: +5 de dano"></textarea>
+        </div>
+
+        <button type="submit" class="btn-add">Adicionar à Mochila</button>
+    </form>
+
+    <div id="mochila-container">
+
+    </div>
+
+</body>
+</html>

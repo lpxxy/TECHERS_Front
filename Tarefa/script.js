@@ -1,15 +1,14 @@
-const form = document.getElementById('inventario');
+const formulario = document.getElementById('inventario');
 const mochilaContainer = document.getElementById('mochila-container');
 
-formulario.addEventListener('submit', function(evento){
+formulario.addEventListener('submit', function(evento) {
     evento.preventDefault();
 
     const nomeItem = document.getElementById('NomeItem').value;
     const descricaoItem = document.getElementById('DescricaoItem').value;
 
-    if (nomeItem === '' || descricaoItem === '' ){
-
-        alert('Preeencha todos os campos!!!');
+    if (nomeItem === '' || descricaoItem === '') {
+        alert('Preencha todos os campos!');
         return;
     }
 
@@ -19,9 +18,11 @@ formulario.addEventListener('submit', function(evento){
     };
 
     criarItemCard(item);
+
+    formulario.reset();
 });
 
-function criarItemCard(item){
+function criarItemCard(item) {
     const card = document.createElement('div');
     card.classList.add('item-card');
 
@@ -32,19 +33,29 @@ function criarItemCard(item){
     descricao.textContent = item.descricao;
 
     const botaoDescartar = document.createElement('button');
-    botaoDescartar.textContent = 'Descarta';
+    botaoDescartar.textContent = 'Descartar';
     botaoDescartar.classList.add('btn-descartar');
 
+    if (item.nome.toLowerCase().includes('lendário')) {
+        card.classList.add('item-lendario');
+    }
+
+    card.addEventListener('mouseover', function() {
+        botaoDescartar.style.display = 'block';
+    });
+
+    card.addEventListener('mouseout', function() {
+        botaoDescartar.style.display = 'none';
+    });
+
+    botaoDescartar.addEventListener('click', function() {
+
+        card.remove();
+    });
 
     card.appendChild(titulo);
     card.appendChild(descricao);
     card.appendChild(botaoDescartar);
 
-    if (item.nome.toLowerCase().includes('lendario')){
-        card.classList.add('item-lendario');
-    }
-
     mochilaContainer.appendChild(card);
-
-    formulario.reset();
 }

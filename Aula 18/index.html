@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+
+    <title>E-commerce</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        produto-card::part(btn-comprar) {
+            background: #2ecc71;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <produto-card
+        titulo="Teclado Mecânico"
+        preco="R$ 250,00">
+    </produto-card>
+
+    <produto-card
+        titulo="Mouse Gamer"
+        preco="R$ 120,00">
+    </produto-card>
+
+    <script
+        type="module"
+        src="./main.js">
+    </script>
+
+</body>
+</html>
